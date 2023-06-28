@@ -59,7 +59,7 @@ jobs:
             valueFile: 'deployment.yml'
             propertyPath: 'spec.template.spec.containers.image'
             value: ${{ secrets.DOCKERHUB_USERNAME }}/demo-app:${{ github.sha }}
-            branch: cicd
-            targetBranch: main
+            branch: main
+            targetBranch: cicd
             createPR: true
             message: 'Update Image Version to ${{ steps.image.outputs.version }}' 
