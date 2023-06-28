@@ -58,7 +58,7 @@ jobs:
           with:
             valueFile: 'deployment.yml'
             propertyPath: 'spec.template.spec.image'
-            value: ${{ github.sha }}
+            value: ${{ secrets.DOCKERHUB_USERNAME }}/demo-app:${{ github.sha }}
             branch: cicd
             targetBranch: main
             createPR: true
