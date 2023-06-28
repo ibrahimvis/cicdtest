@@ -57,7 +57,7 @@ jobs:
           uses: fjogeleit/yaml-update-action@main
           with:
             valueFile: 'deployment.yml'
-            propertyPath: 'spec.template.spec.image'
+            propertyPath: 'spec.template.spec.containers.image'
             value: ${{ secrets.DOCKERHUB_USERNAME }}/demo-app:${{ github.sha }}
             branch: cicd
             targetBranch: main
