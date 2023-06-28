@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nodedemo
+  name: nodedemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodedemo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nodedemo
+    spec:
+      containers:
+      - image: ibrahimvis/demo-app:latest
+        name: nodedemo
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-svc
+  labels:
+    app: node-svc
+spec:
+  type: NodePort
+  ports:
+    - port: 8081
+      targetPort: 8081
+      nodePort: 30007
+  selector:
+    app: nodedemo
