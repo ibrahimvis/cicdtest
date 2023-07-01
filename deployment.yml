@@ -18,7 +18,7 @@ spec:
         app: nodedemo
     spec:
       containers:
-      - image: ibrahimvis/demo-app:072d555b60e9923d432c2badacadea54e45fbedf
+      - image: ibrahimvis/demo-app:27e8b65952c65736de97f78cb906fec4edfebe98
         name: nodedemo
         resources: {}
 status: {}
